@@ -1,2 +1,2 @@
 # Documentazione
-Repository che contiene la documentazione da consegnare per la RTB dei 6 Bit Busters, gruppo per il di progetto di Ingegneria del software dell'Università di Padova per l'AA 2024/2025.
+Repository che contiene la documentazione da consegnare dei Six Bit Busters, gruppo per il progetto di Ingegneria del software dell'Università di Padova per l'AA 2024/2025.
