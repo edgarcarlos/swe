@@ -7,3 +7,10 @@ Repository che contiene la documentazione da consegnare dei Six Bit Busters (Gru
 - Chilese Elena
 - Pincin Matteo
 - Soranzo Andrea
+## Contenuti
+Il repository è composto dalle cartelle:
+- **Candidatura**: Cartella che contiene i file "dichiarazione_degli_impegni", "lettera_di_candidatura" e "valutazione_capitolati"
+- **Verbali esterni**: Cartella contenente i verbali esterni, che riportano gli incontri con i proponenti
+- **Verbali interni**: Cartella contenente i verbali interni, relativi agli incontri tra membri del gruppo
+## Contatti
+**Indirizzo email**: 6bitbusters@gmail.com
