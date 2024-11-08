@@ -1,49 +1,75 @@
 <!DOCTYPE html>
 <html lang="it">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SixBitBusters</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SixBitBusters</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+        <meta name="author" content="SixBitBusters">
+        <meta name="description" content="Sito ufficiale del gruppo 1 di Ingegneria del Software: SixBitBusters">
+        <meta name="keywords" content="swe,ingegneria del software,SixBitBusters,unipd">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
-    <meta name="author" content="SixBitBusters">
-    <meta name="description" content="Sito ufficiale del gruppo 1 di Ingegneria del Software: SixBitBusters">
-    <meta name="keywords" content="swe,ingegneria del software,SixBitBusters,unipd">
-</head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    </head>
 
-<body>
-    <header>
-        <img src="images/logo-inline.svg" alt="">
-        <div id="desc">
+    <body>
+        <header>
 
-            <span>Ingegneria del Software 2024/2025</span>
-            <span>Università degli Studi di Padova</span>
-        </div>
-    </header>
+            <h1>SIX BIT BUSTERS</h1>
+            <div id="desc">
+                <p>
+                    <span>Ingegneria del Software 2024/2025</span>
+                    <span>Università degli Studi di Padova</span>
+                </p>
+            </div>
+        </header>
 
-    <h2>Candidatura</h2>
-    <ul>
-        <li><a target="_blank" href="../Candidatura/lettera_di_candidatura.pdf">Lettera di candidatura</a></li>
-        <li><a target="_blank" href="../Candidatura/dichiarazione_degli_impegni.pdf">Dichiarazioni degli Impegni</a> <span class="tag-versione">V1.0.0</span></li>
-        <li><a target="_blank" href="../Candidatura/valutazione_capitolati.pdf">Valutazione Capitolati</a> <span class="tag-versione">V1.0.0</span></li>
-    </ul>
+        <nav>
+            <ul>
+                <li><a href="#candidatura">Candidatura</a></li>
+                <li><a href="#generali">Generali</a></li>
+                <li><a href="#verbali_int">Verbali Interni</a></li>
+                <li><a href="#verbali_ext">Verbali Esterni</a></li>
+            </ul>
+        </nav>
 
-    <h3>Verbali interni</h3>
-    <ul>
-        <li><a target="_blank" href="../Verbali interni/VI_2024_11_04.pdf">VI_2024-11-04</a> <span class="tag-versione">V1.0.0</span></li>
-        <li><a target="_blank" href="../Verbali interni/VI_2024_10_16.pdf">VI_2024-10-16</a> <span class="tag-versione">V1.0.0</span></li>
-        <li><a target="_blank" href="../Verbali interni/VI_2024_10_19.pdf">VI_2024-10-19</a> <span class="tag-versione">V1.0.0</span></li>
-        <li><a target="_blank" href="../Verbali interni/VI_2024_10_25.pdf">VI_2024-10-25</a> <span class="tag-versione">V1.0.0</span></li>
-    </ul>
+        <main>
+            <div id="candidatura">
+                <h1>CANDIDATURA</h1>
+                <ul>
+                    {{candidatura}}
+                </ul>
+            </div>
+            <div id="generali">
+                <h1>GENERALI</h1>
+                <ul>
+                    {{generali}}
+                </ul>
+            </div>
 
-    <h3>Verbali esterni</h3>
-    <ul>
-        <li><a target="_blank" href="../Verbali esterni/VE_2024_10_24.pdf">VE_2024-10-24</a> <span class="tag-versione">V3.0.0</span></li>
-        <li><a target="_blank" href="../Verbali esterni/VE_2024_10_28.pdf">VE_2024-10-28</a> <span class="tag-versione">V2.0.0</span></li>
-        <li><a target="_blank" href="../Verbali esterni/VE_2024_10_30.pdf">VE_2024-10-30</a> <span class="tag-versione">V2.0.0</span></li>
-    </ul>
-</body>
+            <div id="verbali_int">
+                <h2>VERBALI INTERNI</h2>
+                <ul>
+                    {{VI}}
+                </ul>
+            </div>
+
+            <div id="verbali_ext">
+                <h2>VERBALI ESTERNI</h2>
+                <ul>
+                    {{VE}}
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p>Copyright&copy; 2024 by SixBitBusters all right reserved</p>
+        </footer>
+
+    </body>
 
 </html>
