@@ -52,6 +52,7 @@ def main(UseThread:bool=False):
 def BuildAllPDF(init_path:str, pdfs:dict[str, list], command:list[str]):
     logging.info(f'Building tex files')
     for type in os.listdir(path.Path(DOCS_PATH)):
+        pdfs[type]=[]
         BuildTypePDF(init_path, pdfs, command, type)
 
 def BuildTypePDF(init_path:str, pdfs:dict[str, list], command:list[str], type:str):
@@ -67,7 +68,6 @@ def BuildTypePDF(init_path:str, pdfs:dict[str, list], command:list[str], type:st
             logging.error(f"Compiling {doc} failed with stderr: \n{result.stderr}")
             exit(1)
         cmd.move(doc+".pdf",path.Path("../../../_site/"+doc+".pdf"))
-        pdfs[type]=[]
         pdfs[type].append(PDF(doc+'.pdf',ver))
         logging.debug(f"Current dir to {os.getcwd()}")
         logging.debug(f"Changing dir to {path.Path(init_path)}")
