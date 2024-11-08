@@ -10,6 +10,7 @@ import time
 
 
 TEMPLATE = '<li><a href="{{link}}" target="_blank">{{name}}</a> <span class="tag-versione">{{ver}}</span> </li>'
+DOCS_PATH = "Docs"
 
 class PDF:
     def __init__(self,name,ver):
@@ -47,9 +48,8 @@ def main(UseThread:bool=False):
     command = ["pdflatex"]
 
     if UseThread:
-
         with concurrent.futures.ThreadPoolExecutor(60) as pool:
-            for type in os.listdir(path.Path("tex")):
+            for type in os.listdir(path.Path(DOCS_PATH)):
                 pool.submit(BuildTypePDF,init_path,pdfs,command,type)
     else:
         BuildAllPDF(init_path, pdfs, command) 
@@ -60,15 +60,15 @@ def main(UseThread:bool=False):
 
 def BuildAllPDF(init_path:str, pdfs:dict[str, list], command:list[str]):
     logging.info(f'Building tex files')
-    for type in os.listdir(path.Path("tex")):
+    for type in os.listdir(path.Path(DOCS_PATH)):
         BuildTypePDF(init_path, pdfs, command, type)
 
 def BuildTypePDF(init_path:str, pdfs:dict[str, list], command:list[str], type:str):
-    for doc in os.listdir(path.Path("tex/"+type)):
-        ver = GetDocVersion(path.Path('tex/'+type+"/"+doc+"/titlepage.tex"))
+    for doc in os.listdir(path.Path(DOCS_PATH+"/"+type)):
+        ver = GetDocVersion(path.Path(DOCS_PATH+"/"+type+"/"+doc+"/titlepage.tex"))
         logging.debug(f"Current dir {os.getcwd()}")
         logging.debug(f"Changing dir to {path.Path('tex/'+type+'/'+doc)}")
-        os.chdir(path.Path("tex/"+type+"/"+doc))
+        os.chdir(path.Path(DOCS_PATH+"/"+type+"/"+doc))
         result = subprocess.run(command + ["-jobname="+doc] + [path.Path("main.tex")],stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
         try:
             result.check_returncode()
