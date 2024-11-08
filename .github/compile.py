@@ -6,8 +6,6 @@ import os
 import logging
 import concurrent.futures
 
-import time
-
 
 TEMPLATE = '<li><a href="{{link}}" target="_blank">{{name}}</a> <span class="tag-versione">{{ver}}</span> </li>'
 DOCS_PATH = "Docs"
@@ -29,7 +27,6 @@ class PDF:
 
 
 def main(UseThread:bool=False):
-    start_time = time.time()
     logging.basicConfig(level=os.getenv('LOGLEVEL', 'INFO'))
     init_path = os.getcwd()
 
@@ -39,12 +36,7 @@ def main(UseThread:bool=False):
 
     html = path.Path('_site/index.html').read_text()
 
-    pdfs = {
-        "candidatura" : [],
-        "generali" : [],
-        "VI" : [],
-        "VE" : []
-    }
+    pdfs = {}
     command = ["pdflatex"]
 
     if UseThread:
@@ -55,7 +47,6 @@ def main(UseThread:bool=False):
         BuildAllPDF(init_path, pdfs, command) 
     
     UpdateHtml(html,pdfs)
-    print("--- %s seconds ---" % (time.time() - start_time))
 
 
 def BuildAllPDF(init_path:str, pdfs:dict[str, list], command:list[str]):
@@ -76,6 +67,7 @@ def BuildTypePDF(init_path:str, pdfs:dict[str, list], command:list[str], type:st
             logging.error(f"Compiling {doc} failed with stderr: \n{result.stderr}")
             exit(1)
         cmd.move(doc+".pdf",path.Path("../../../_site/"+doc+".pdf"))
+        pdfs[type]=[]
         pdfs[type].append(PDF(doc+'.pdf',ver))
         logging.debug(f"Current dir to {os.getcwd()}")
         logging.debug(f"Changing dir to {path.Path(init_path)}")
