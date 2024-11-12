@@ -15,7 +15,10 @@ class PDF:
         self.name = name
         self.ver = ver
     def GetName(self,WExt=False):
-        return self.name
+        if WExt:
+            return self.name+'.pdf'
+        else :
+            return self.name
     def GetVer(self):
         return self.ver
     def __lt__(self, other):
@@ -37,7 +40,7 @@ def main(UseThread:bool=False):
     html = path.Path('_site/index.html').read_text()
 
     pdfs = {}
-    command = ["pdflatex"]
+    command = ["latexmk", "-pdf"]
 
     if UseThread:
         with concurrent.futures.ThreadPoolExecutor(60) as pool:
@@ -67,8 +70,8 @@ def BuildTypePDF(init_path:str, pdfs:dict[str, list], command:list[str], type:st
         except Exception as e:
             logging.error(f"Compiling {doc} failed with stderr: \n{result.stderr}")
             exit(1)
+        pdfs[type].append(PDF(doc,ver))
         cmd.move(doc+".pdf",path.Path("../../../_site/"+doc+".pdf"))
-        pdfs[type].append(PDF(doc+'.pdf',ver))
         logging.debug(f"Current dir to {os.getcwd()}")
         logging.debug(f"Changing dir to {path.Path(init_path)}")
         os.chdir(init_path)
