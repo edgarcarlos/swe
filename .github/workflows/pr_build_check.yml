@@ -1,0 +1,30 @@
+name: Compile check LaTeX
+on:
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Find modified LaTeX files
+        id: find
+        run: |
+          git remote set-branches --add origin main
+          git fetch
+          git diff --name-only origin/main
+          echo "changed_files=$(git diff --name-only origin/main | grep 'main.tex$')" >> $GITHUB_OUTPUT
+      - name : Install dependencies
+        run: |
+          sudo apt install -y \
+          texlive \
+          texlive-latex-extra \
+          texlive-lang-italian \
+      - name: Compile the modified LaTeX file
+        run: |
+          if [ -n "${{ steps.find.outputs.changed_files }}" ]; then
+            directory=$(dirname "${{ steps.find.outputs.changed_files }}")
+            file=$(basename "${{ steps.find.outputs.changed_files }}")
+            cd "$directory"
+            pdflatex "$file"        
+          fi
