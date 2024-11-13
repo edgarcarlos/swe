@@ -4,6 +4,8 @@ name: Build LaTeX and display the page
 on:
   push:
     branches: ["main"]
+    paths:
+      - 'Docs/**'
 
   workflow_dispatch:
 
