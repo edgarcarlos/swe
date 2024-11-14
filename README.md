@@ -14,6 +14,7 @@ Il repository è composto dalle cartelle:
 - **Docs**: Cartella che contiene i file di documentazione relativi ai verbali interni ed esterni e alla candidatura al progetto
 
     - **Candidatura**: Cartella che contiene i file "dichiarazione_degli_impegni", "lettera_di_candidatura" e "valutazione_capitolati"
+    - **Generali**: Cartella che contiene i file "norme_di_progetto", piano_di_progetto", "analisi dei requisiti", "piano_di_qualifica" e "glossario"
     - **Verbali esterni**: Cartella contenente i verbali esterni, che riportano gli incontri con i proponenti
     - **Verbali interni**: Cartella contenente i verbali interni, relativi agli incontri tra membri del gruppo
 
