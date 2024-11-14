@@ -2,15 +2,21 @@
 Repository che contiene la documentazione da consegnare dei Six Bit Busters (Gruppo 1), per il progetto di Ingegneria del software dell'Università di Padova per l'AA 2024/2025.
 ## Il gruppo è composto da:
 - Bergamin Elia
+- Chilese Elena
 - Diviesti Filippo
 - Djossa Edgar
-- Chilese Elena
 - Pincin Matteo
 - Soranzo Andrea
 ## Contenuti
 Il repository è composto dalle cartelle:
-- **Candidatura**: Cartella che contiene i file "dichiarazione_degli_impegni", "lettera_di_candidatura" e "valutazione_capitolati"
-- **Verbali esterni**: Cartella contenente i verbali esterni, che riportano gli incontri con i proponenti
-- **Verbali interni**: Cartella contenente i verbali interni, relativi agli incontri tra membri del gruppo
+- **.github**: Cartella che contiene i file sorgente delle GitHub Action
+- **3Dataviz**: Cartella che contiene i file sorgente del prodotto
+- **Docs**: Cartella che contiene i file di documentazione relativi ai verbali interni ed esterni e alla candidatura al progetto
+
+    - **Candidatura**: Cartella che contiene i file "dichiarazione_degli_impegni", "lettera_di_candidatura" e "valutazione_capitolati"
+    - **Verbali esterni**: Cartella contenente i verbali esterni, che riportano gli incontri con i proponenti
+    - **Verbali interni**: Cartella contenente i verbali interni, relativi agli incontri tra membri del gruppo
+
+- **website**: Cartella che contiene i file sorgente del sito web in GitHub Pages
 ## Contatti
 **Indirizzo email**: 6bitbusters@gmail.com
