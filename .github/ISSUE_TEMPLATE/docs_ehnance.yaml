@@ -2,7 +2,7 @@ name: Miglioramento documentazione
 description: Suggerisci una modifica da fare alla documentazione 
 title: '[Nome del doc] - [sezione da modificare]'
 labels: ["documentation","enhancement","P2"]
-projects: ['AndreaSoranzo/pp']
+projects: '6BitBusters/1'
 
 body:
   - type: textarea

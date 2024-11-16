@@ -2,7 +2,7 @@ name: To-Do Coding
 description: Crea e assegna un task riguardante il codice
 title: 'To-Do: [codice caso uso] - [nome featues]'
 labels: 'code'
-projects: ['AndreaSoranzo/pp']
+projects: '6BitBusters/1'
 
 body:
   - type: input

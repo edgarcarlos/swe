@@ -2,7 +2,7 @@ name: Correzione documentazione
 description: Segnala un` errore documentazione 
 title: '[Nome del doc] - [sezione da modificare]'
 labels: ["documentation","P1"]
-projects: ['AndreaSoranzo/pp']
+projects: '6BitBusters/1'
 
 body:
   - type: textarea

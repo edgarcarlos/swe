@@ -3,7 +3,7 @@ name: To-Do Documentazione
 description: Crea e assegna un task riguardante la documentazione 
 title: 'To-Do: [Nome_documento] - [sezione]'
 labels: 'documentation'
-projects: 'AndreaSoranzo/5'
+projects: '6BitBusters/1'
 
 body:
   - type: input
