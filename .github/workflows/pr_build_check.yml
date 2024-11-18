@@ -1,9 +1,11 @@
 name: Compile check LaTeX
 on:
   pull_request:
-    branches: [ main ]
+    branches: 
+      - main
+      - 'docs/**'
 jobs:
-  build:
+  test-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

@@ -14,6 +14,22 @@ body:
       placeholder: Nome di verbale interno o esterno
     validations:
       required: false
+  - type: input
+    id: cod-V
+    attributes:
+      label: Codice Verbale
+      description: Inserisci il codice di tracciamento decisione
+      placeholder: Codice
+    validations:
+      required: true
+  - type: input
+    id: link-V
+    attributes:
+      label: Link Verbale
+      description: Inserisci link del verbale
+      placeholder: Link
+    validations:
+      required: true
   - type: textarea
     id: list
     attributes:
