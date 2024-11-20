@@ -10,8 +10,8 @@ body:
     attributes:
       label: Breve descrizione
       description: |
-      Breve descrizione di cosa andare a correggere e come
+        Breve descrizione di cosa andare a correggere e come
 
-      Tip: Usa la sintassi di Markdown per inserire la lista di checkbox se vuoi fare una lista
+        Tip: Usa la sintassi di Markdown per inserire la lista di checkbox se vuoi fare una lista
     validations:
       required: true
