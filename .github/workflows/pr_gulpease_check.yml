@@ -25,7 +25,7 @@ jobs:
         id: value
         run: |
           if [ -n "${{ steps.find.outputs.doc }}" ]; then
-            value=$(python3 .github/gulpease.py ${{ steps.find.outputs.doc }})
+            value=$(python3 .github/gulpease.py "${{ steps.find.outputs.doc }}")
             echo "idx=$value" >> "$GITHUB_OUTPUT"
           fi
   comment:
