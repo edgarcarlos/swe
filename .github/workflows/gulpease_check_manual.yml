@@ -1,10 +1,5 @@
 name: Gulpease Index Manual
 on:
-  pull_request:
-    branches: 
-      - main
-      - 'docs/**'
-
   workflow_dispatch: # per esecuzione manuale
     inputs:
      folder:
@@ -18,23 +13,24 @@ jobs:
       idx: ${{ steps.value.outputs.idx }}
     steps:
       - uses: actions/checkout@v3
-      - name: Find modified LaTeX files
-        id: find
-        run: |
-          git remote set-branches --add origin main
-          git fetch
-          changed_files=$(git diff --name-only origin/$GITHUB_BASE_REF | grep '.tex$') || true
-          changed_document=$(echo "$changed_files" | cut -d/ -f1-3 | uniq) 
-          echo "$changed_files"
-          echo "$changed_document"
-          echo "doc=$changed_document" >> $GITHUB_OUTPUT
+      - name: Validate the folder path
+        id: validate
+        run: | 
+          folder="${{ github.event.inputs.folder }}"
+          if [ ! -d "$folder" ]; then
+            echo "The folder doesn't esist : $folder"
+            exit 1
+          fi
+          echo "Folder check : $folder"
       - name : Calulate Gulpease index
         id: value
         run: |
-          if [ -n "${{ steps.find.outputs.doc }}" ]; then
-            value=$(python3 .github/gulpease.py "${{ steps.find.outputs.doc }}")
-            echo "idx=$value" >> "$GITHUB_OUTPUT"
-          fi
+          folder="${{ github.event.inputs.folder }}"
+          echo "processing of .tex file in the folder : $folder"
+          
+          # call the python script
+          value=$(python3 .github/gulpease.py "$folder")
+          echo "idx=$value" >> "$GITHUB_OUTPUT"
   comment:
     runs-on: ubuntu-latest
     needs: test-gulpease
