@@ -32,7 +32,12 @@ jobs:
           value=$(python3 .github/gulpease.py "$folder")
           echo "idx=$value" >> "$GITHUB_OUTPUT"
           
-      - name: indice Gulpease in the summary
+      - name: Create a file with the Gulpease index
         run: |
-          echo "## Indice Gulpease : ${{ steps.calculate.outputs.idx }}" >> $GITHUB_ENV
+          echo "Indice Gulpease : ${{ steps.calculate.outputs.idx }}" > gulpease_index.txt
 
+      - name: Save the index Gulpease like artefact
+        uses: actions/upload-artifact@v3
+        with:
+          name: gulpease-index
+          path: gulpease_index.txt
