@@ -30,4 +30,9 @@ jobs:
           
           # call the python script
           value=$(python3 .github/gulpease.py "$folder")
-          echo "Indice Gulpease : $value"
+          echo "idx=$value" >> "$GITHUB_OUTPUT"
+          
+      - name: indice Gulpease in the summary
+        run: |
+          echo "## Indice Gulpease : ${{ steps.calculate.outputs.idx }}" >> $GITHUB_ENV
+
