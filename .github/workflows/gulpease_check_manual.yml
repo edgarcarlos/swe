@@ -1,4 +1,4 @@
-name: Gulpease Index
+name: Gulpease Index Manual
 on:
   pull_request:
     branches: 
