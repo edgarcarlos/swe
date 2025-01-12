@@ -77,7 +77,7 @@ def gulpease(doc:str) -> tuple[int, int]:
     current_path = path.Path(doc)
     tot=0
     n_files=0
-    for file in os.listdir(current_path): # for each file in a document
+    for file in os.listdir(current_path): # for each file in a doc
         if is_checkable(file): 
             n_files+=1
             idx = calculate_gulpease(str(current_path) + "/" + file)
