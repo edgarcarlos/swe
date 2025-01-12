@@ -1,0 +1,39 @@
+name: Segnala bug nel codice
+description: Segnala un bug nel codice
+title: '[Codice caso d`uso] - [nome_caso]'
+labels: ["bug"]
+projects: '6BitBusters/1' # 6BitBusters/1
+
+
+
+body:
+  - type: textarea
+    id: bug
+    attributes:
+      label: Desctivi il bug
+      description: Sii il più preciso possibile
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: I passi sono ser riprodurlo
+      placeholder: |
+        Go to '...'
+        Click on '....'
+        Scroll down to '....'
+        See error
+    validations:
+      required: true
+  - type: textarea
+    id: behave
+    attributes:
+      label: Comportamento aspettato
+    validations:
+      required: true
+  - type: textarea
+    id: hint
+    attributes:
+      label: Qualche idea sul motivo
+    validations:
+      required: false

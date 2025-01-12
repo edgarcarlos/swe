@@ -1,0 +1,58 @@
+
+name: To-Do Documentazione
+description: Crea e assegna un task riguardante la documentazione 
+title: 'To-Do: [Nome_documento] - [sezione]'
+labels: 'documentation'
+projects: '6BitBusters/1'
+
+body:
+  - type: input
+    id: obj-disc
+    attributes:
+      label: Oggetto di discussione
+      description: Inserisci il verbale nel quale si è discusso di aggiungere questa sezione
+      placeholder: Nome di verbale interno o esterno
+    validations:
+      required: false
+  - type: input
+    id: cod-V
+    attributes:
+      label: Codice Verbale
+      description: Inserisci il codice di tracciamento decisione
+      placeholder: Codice
+    validations:
+      required: true
+  - type: input
+    id: link-V
+    attributes:
+      label: Link Verbale
+      description: Inserisci link del verbale
+      placeholder: Link
+    validations:
+      required: true
+  - type: dropdown
+    id: role
+    attributes:
+      label: Indica il ruolo
+      description: Chi dovrebbe eseguire questo To-Do?
+      options:
+        - Responsabile
+        - Amministratore
+        - Analista
+        - Progettista
+        - Programmatore
+        - Verificatore
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: list
+    attributes:
+      label: Informazioni minime da implementare
+      description: |
+        Elenca le cose più importanti da implementare
+      
+        Tip: Usa la sintassi di Markdown per inserire la lista di checkbox
+      placeholder: "- [ ] Item 1"
+    validations:
+      required: true
