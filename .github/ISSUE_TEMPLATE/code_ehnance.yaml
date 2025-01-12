@@ -1,0 +1,17 @@
+name: Miglioramento codice
+description: Proponi un miglioramento da andare ad applicare al codice
+title: '[Codice caso d`uso] - [nome_caso]'
+labels: ["enhancement","code"]
+projects: '6BitBusters/1'
+
+body:
+  - type: textarea
+    id: ehnance
+    attributes:
+      label: Breve descrizione
+      description: |
+        Breve descrizione di cosa andare a modificare/migliorare e come
+
+        Tip: Usa la sintassi di Markdown per inserire la lista di checkbox se vuoi fare una lista
+    validations:
+      required: true

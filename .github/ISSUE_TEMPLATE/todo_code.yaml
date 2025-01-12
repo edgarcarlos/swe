@@ -1,0 +1,41 @@
+name: To-Do Coding
+description: Crea e assegna un task riguardante il codice
+title: 'To-Do: [codice caso uso] - [nome featues]'
+labels: 'code'
+projects: '6BitBusters/1'
+
+body:
+  - type: input
+    id: obj-disc
+    attributes:
+      label: Oggetto di discussione
+      description: Inserisci il verbale nel quale si è discusso di aggiungere questa sezione
+      placeholder: Nome di verbale interno o esterno
+    validations:
+      required: false
+  - type: dropdown
+    id: role
+    attributes:
+      label: Indica il ruolo
+      description: Chi dovrebbe eseguire questo To-Do?
+      options:
+        - Responsabile
+        - Amministratore
+        - Analista
+        - Progettista
+        - Programmatore
+        - Verificatore
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: list
+    attributes:
+      label: Breve descrizione della funzionalità da implementare
+      description: |
+        Elenca le cose più importanti da implementare
+      
+        Tip: Usa la sintassi di Markdown per inserire la lista di checkbox se vuoi fare una lista
+      placeholder: "Descrivi"
+    validations:
+      required: true
